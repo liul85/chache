@@ -1,7 +1,6 @@
 package chache
 
 import (
-	"fmt"
 	"reflect"
 	"testing"
 )
@@ -19,8 +18,6 @@ func TestNewAdd(t *testing.T) {
 	if v, ok := lru.Get("key1"); !ok || string(v.(Str)) != "value1" {
 		t.Fatal("Can't get item from cache with key 'key1'")
 	}
-
-	fmt.Println(lru.Len())
 }
 
 func TestShouldUpdateExistingItemWhenAdd(t *testing.T) {
